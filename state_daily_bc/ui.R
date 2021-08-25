@@ -1,3 +1,9 @@
+library(tidyr)
+library(wesanderson)
+library(shiny)
+library(dplyr)
+library(slid) 
+
 shinyUI(fluidPage(
   sliderInput("date.update",
               label = h5("Select date"),

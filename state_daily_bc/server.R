@@ -1,6 +1,8 @@
 state.daily.bc <- function(date.update){
   # load daily new case data for each state
   dat.sd = slid::dat.sd
+  # order the daily new cases from large to small
+  ind.sd <- order(dat.sd[,format(date.update, 'X%Y.%m.%d')], decreasing = TRUE)
   # select the top 10 states with highest daily new
   df.sd <- dat.sd[ind.sd[1:10],]
   df.sd <- df.sd %>% 
